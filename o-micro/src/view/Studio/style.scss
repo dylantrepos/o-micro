@@ -1,0 +1,637 @@
+@import '../../assets/scss/_variables.scss';
+
+.studio_main {
+}
+
+.studio_informationsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: $md) {
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 50px;
+    align-items: flex-start;
+  }
+}
+
+.studio_informationsTitleContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: $md) {
+    flex-direction: row;
+    gap: 30px;
+  }
+}
+
+.studio_pageTitle {
+  font-size: 1.3em;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  @media screen and (min-width: $md) {
+    
+  }
+}
+
+.studio_songTitle {
+  border-radius: 100px;
+  border: 1px solid white;
+  padding: 10px 20px;
+  width: 80%;
+  text-align: center;
+  max-width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+  @media screen and (min-width: $md) {
+    width: fit-content;
+    padding: 10px 30px;
+  }
+}
+
+.studio_description {
+  margin: 30px 30px 50px;
+  font-size: .9em;
+  text-align: center;
+  font-weight: 300;
+  max-width: 450px;
+  
+  @media screen and (min-width: $md) {
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+  }
+}
+
+
+canvas {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 100px;
+}
+
+
+/* Make the clips use as much space as possible, and
+  * also show a scrollbar when there are too many clips to show
+  * in the available space */
+.sound-clips {
+  flex: 1;
+  overflow: auto;
+}
+
+audio {
+  display: block;
+  margin: 1rem auto 0.5rem;
+  width: 80vw;
+  max-width: 300px;
+}
+
+.audioContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 45;
+  
+  @media screen and (min-width: $md) {
+    right: 15%;
+    top: 50%;
+    width: 300px;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  :first-child,
+  .audioContainer_actions {
+    z-index: 5;
+  }
+}
+
+.audioContainer_actions {
+  display: flex;
+  margin-top: 20px;
+}
+
+.studio_recordContainer {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.studio_recordBox {
+  background: linear-gradient(336.28deg, #9E00FF 15.92%, #441D5C 90.18%);
+  outline: 10px solid #530E7D;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: .8em;
+  gap: 20px;
+  box-shadow: 0px 6px 20px 12px #0000007a;
+  transition: all 1s ease-in-out;
+  
+  &.-stop {
+    outline-color: rgb(105, 8, 8);
+    background: transparent;
+    padding-top: 100px;
+    box-shadow: 0px 6px 20px 12px #00000000;
+    animation: 
+      recordOutline 2s infinite alternate-reverse ease-in-out,
+      recordShadow 5s forwards ease-in-out;
+  }
+
+} 
+
+.studio_recordIcon {
+  font-size: 1em;
+  width: 50px;
+  stroke-width: 1;
+  height: auto;
+}
+
+.studio_downloadButton {
+  text-decoration: none;
+  background-color: rgb(52, 147, 224);
+  color: white;
+  width: fit-content;
+  padding: 10px 30px;
+  border-radius: 5px;
+
+  span {
+    margin-left: 5px;
+  }
+}
+
+.studio_backgroundRecording {
+  height: 100%;
+  width: 100%;
+  backdrop-filter: brightness(1) blur(0px);
+  position: absolute;
+  z-index: 40;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transition: backdrop-filter .2s ease-in-out;
+  
+  &.-active {
+    pointer-events: visible;
+    backdrop-filter: brightness(0.3) blur(4px);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes recordOutline {
+  0% {
+    outline-color: rgb(105, 8, 8);
+    outline-width: 10px;
+  }
+  50% {
+    outline-color: red;
+    outline-width: 5px;
+  }
+  100% {
+    outline-color: rgb(150, 24, 24);
+    outline-width: 10px;
+  }
+}
+
+@keyframes recordShadow {
+  0% {
+    box-shadow: 0px 6px 20px 12px #0000007a;
+  }
+  100% {
+    box-shadow: 0px 6px 20px 12px #00000000;
+  }
+}
+
+
+// Login 
+
+.studio_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  
+  @media screen and (min-width: $md) {
+    grid-area: form;
+  }
+}
+
+.studio_form .studio_box {
+  margin: 20px 0;
+}
+
+
+.studio_box {
+  width: 100%;
+  position: relative;  
+  
+  &.-active {
+    z-index: -1;
+  }  
+}
+
+.studio_box input{
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background: linear-gradient(270deg, rgba(166, 161, 161, 0.63) 0%, rgba(255, 255, 255, 0.37) 100%);
+  border-radius: 10px;
+}
+
+.studio_box label {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  pointer-events: none;
+  transition: .5s;
+
+}
+
+.studio_box input:focus + label,
+.studio_box input:valid + label{
+  top: -35px;
+  left: 0;
+  color: #dca6ff;;
+  font-size: 12px;
+}
+
+.studio_submitBtn {
+  margin-top: 1em;
+  width: 70%;
+  height: 45px;
+  padding: 0;
+  border-radius: 100px;
+  font-size: 1.2em;
+  background: linear-gradient(270deg, rgba(158, 0, 255, 0.76) 0%, rgba(158, 0, 255, 0.37) 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.studio_doneContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: brightness(.2) blur(4px);
+  opacity: 0;
+  color: black;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  
+  &.-active {
+    opacity: 1;
+    pointer-events: visible;
+  }
+}
+
+.studio_done {
+  background-color: white;
+  padding: 20px 50px;
+  border-radius: 5px;
+}
+
+.studio_doneActions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.studio_createRecordBtnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  position: absolute;
+  // background-color: red;
+
+  left: 0;
+  bottom: 0;
+
+  @media screen and (min-width: $md) {
+    position: relative;
+    width: 50%;
+    margin-top: 20px;
+    justify-content: flex-start;
+    margin-left: 50px;
+  }
+}
+
+.studio_createRecordBtn {
+  background-color: #059d26;
+  width: 200px;
+  padding: 8px 0;
+  height: 50px;
+  border-radius: 100px;
+  font-size: .9em;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all .2s ease-in-out;
+  
+  font-weight: 500;
+
+  &.-inactive {
+    background-color: #bebebe;
+    color: #3f3f3f;
+    pointer-events: none;
+  }
+  
+  &:hover {
+      background-color: white;
+      color: #059d26;
+      cursor: pointer;
+
+  }
+
+  @media screen and (min-width: $md) {
+      font-size: 1em; 
+      padding: 12px 0;
+      margin-bottom: 0px;
+      width: 250px;
+  }
+}
+
+.studio_optionsRecordsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  @media screen and (min-width: $md) {
+    width: 45%;
+    margin-left: 50px;
+    max-width: 400px;
+  }
+}
+
+.studio_optionsRecords {
+  display: flex;
+  justify-content: space-between;
+}
+
+.studio_optionsRecordsDescription {
+  width: 70%;
+}
+
+.studio_optionsRecordsDescriptionTitle {
+
+}
+
+.studio_optionsRecordsDecsriptionContent {
+  font-weight: 300;
+  font-size: .8em;
+}
+
+.studio_optionsRecordsToggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 62px;
+  height: 32px;
+  display: inline-block;
+  position: relative;
+  border-radius: 50px;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #707070;
+  transition: background-color ease 0.3s;
+}
+
+.studio_optionsRecordsToggle:before {
+  content: "on off";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  background: #fff;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  font: 10px/28px Helvetica;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-indent: -22px;
+  word-spacing: 37px;
+  color: #fff;
+  text-shadow: -1px -1px rgba(0,0,0,0.15);
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  transition: all cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+}
+
+.studio_optionsRecordsToggle:checked {
+  background-color: #4CD964;
+}
+
+.studio_optionsRecordsToggle:checked::before {
+  left: 32px;
+}
+
+
+
+
+.studio_popInContainer {
+  position: absolute;
+  height: calc(100vh - 70px);
+  bottom: 0;
+  z-index: 99;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  animation: popInEnter .2s  ease-in-out forwards;
+}
+
+@keyframes popInEnter {
+  0% {
+      backdrop-filter: blur(0px);
+      opacity: 0;
+      transform: translateY(40px);
+  }
+  100% {
+      backdrop-filter: blur(3px);
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+
+.studio_popIn {
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.studio_popInTitle {
+  color: black;
+}
+
+.studio_popInFormContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.studio_popInInputContainer {
+  background-color: #f9f2f2;
+  border-radius: 5px;
+  height: fit-content;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.studio_popInInput {
+  width: 100%;
+  border: none;
+  height: 100%;
+  background: transparent;
+  font-size: 1em;
+  input {
+      height: 100%;
+  }
+  ::placeholder {
+      color: #bfbfbf;
+  }
+}
+
+.studio_popInFileContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.studio_popInFileTitle {
+  color: black;
+
+}
+
+.studio_popInFileInputContainer {
+  // width: 100px;
+  display: flex;
+  border: rgb(8, 113, 212) 2px  solid;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: rgb(8, 113, 212);
+  transition: all .2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+      color: white;
+      background-color: rgb(8, 113, 212);
+      border: transparent 2px solid;
+      cursor: pointer;
+  }
+
+  span  {
+      display: flex;
+      font-size: .8em;
+      align-items: center;
+      cursor: pointer;
+  }
+}
+
+.studio_popInFileInputIcon {
+  font-size: 120px;
+  margin-right: 10px;
+}
+
+.studio_popInFileInput {
+  width: auto;
+  margin-left: 20px;
+  display: none;
+}
+
+.studio_popInInputIcon {
+  color: #bfbfbf;
+  font-size: 1.5em;
+  margin-left: 20px;
+  margin-right: 15px;
+}
+
+.studio_popInBtn {
+  background-color: #059d26;
+  width: 200px;
+  padding: 8px 0;
+  border-radius: 100px;
+  font-size: .8em;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all .2s ease-in-out;
+  border: 1px solid transparent;
+  
+  font-weight: 500;
+  
+  &:hover {
+      border: 1px solid #059d26;
+      background-color: white;
+      color: #059d26;
+      cursor: pointer;
+
+  }
+
+  @media screen and (min-width: $md) {
+      font-size: 1em; 
+      padding: 12px 0;
+      margin-bottom: 0px;
+      width: 250px;
+  }
+}

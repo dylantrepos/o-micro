@@ -1,0 +1,95 @@
+@import '../../assets/scss/_variables.scss';
+
+.header_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.183);
+    display: grid;
+    grid-template: 
+        'back logo .' 60px
+        / 60px 1fr 60px;
+    align-items: center;
+    justify-items: center;
+    line-height: 0 !important;
+
+    @media screen and (min-width: $md) {
+        grid-template: 
+            'logo menu settings' 60px
+            / 250px 1fr 60px;
+    }
+
+    .iconImg {
+        path {
+            fill: white;
+        }
+    }
+}
+
+.header_logoContainer {
+    grid-area: logo;
+
+    img {
+        height: 45px;
+        vertical-align: center;
+    }
+}
+
+.header_menuContainer {
+    grid-area: menu;    
+    display: none;
+    justify-self: flex-start;
+    padding-left: 25px;
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+
+    @media screen and (min-width: $md) {
+        display: block;
+    }
+}
+
+.-notLoggedIn {
+    grid-template: 
+    'back logo .' 60px
+    / 60px 1fr 60px;
+
+    .header_iconSettings {
+        display: none;
+    }    
+
+    .header_iconBack {
+        display: block;
+    }    
+
+    .header_menuContainer {
+        display: none;
+    }
+}
+
+.header_iconBack {
+    grid-area: back;
+
+    @media screen and (min-width: $md) {
+        display: none;
+    }
+}
+
+.header_iconSettings {
+    grid-area: settings;
+    display: none;
+
+    @media screen and (min-width: $md) {
+        display: block;
+    }
+}

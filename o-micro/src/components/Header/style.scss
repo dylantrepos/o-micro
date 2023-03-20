@@ -1,0 +1,62 @@
+@import '../../assets/scss/_variables.scss';
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    @media screen and (min-width: $lg) {
+        padding: 30px;
+    }
+
+}
+
+.header_logoContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.header_logo {
+    width: 100px;
+    
+    @media screen and (min-width: $lg) {
+        width: 150px;
+    }
+}
+
+.header_bandContainer {
+    display: flex;
+    align-items: center;
+    background-color: #52627F;
+    padding: 5px 20px;
+    border-radius: 100px;
+    color: white;
+    max-width: 300px;
+    gap: 10px;
+
+    @media screen and (min-width: $lg) {
+            padding: 5px 30px;
+    }
+}
+
+.header_bandName {
+    font-weight: 200;
+    font-size: .8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media screen and (min-width: $lg) {
+        font-size: 1em;    
+    }
+}
+
+.header_bandIcon {
+    color: white;
+    height: 1.2em;
+}
+
+.header_bandLink {
+    text-decoration: none;
+}

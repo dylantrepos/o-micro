@@ -1,0 +1,53 @@
+ /**
+ * LOGO
+ **/
+
+ .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+
+    svg {
+        stroke: #7E52FE;
+        width: 3rem; 
+        height: auto;
+    }
+
+    .logo_container {
+        border: black 6px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        border-color: white;
+        padding: 5px;
+        margin-right: 5px;
+    }
+
+    .logo_img {
+        height: 3em;
+    }
+    
+    
+    &.-small {
+        .logo_container {
+            border: rgb(255, 255, 255) 4px solid;
+            padding: 5px;
+            margin-right: 2.5px;
+        }
+    
+        .logo_img {
+            height: 3em;
+        }
+
+        svg {
+            width: 1.5rem; 
+        }
+
+        .logo_name {
+            font-size: 2em;
+        }
+     }
+}
+
+

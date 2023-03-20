@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+
+@import './_variables.scss';
+@import './_utils.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-weight: 400;
+
+    div, span, p {
+        line-height: O;
+    }
+}
+
+body {
+    background: linear-gradient(170.28deg, #394A65 3.13%, #27497C 34.43%, #2A2234 65.73%, #000000 97.03%);;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+    padding: 0 20px;
+}
