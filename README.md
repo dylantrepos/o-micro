@@ -1,9 +1,7 @@
 ﻿# projet-o-micro-front
 
-Project made with React for school.
-
 ## What is O'micro ? 
-This application is a combination of a cloud storage service and a minimalist studio. You can
+Made during school, this application is a combination of a cloud storage service and a minimalist studio. You can
 create a song where you or other band members can record their ideas. Once recorded, you
 can listen to all the instruments together, creating a perfect prototype for a song. It also helps
 to save all your band's songs and ideas in a single place. To simplify understanding, we can
