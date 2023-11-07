@@ -8,7 +8,7 @@ to save all your band's songs and ideas in a single place. To simplify understan
 divide the application into four parts: the band, the songs, the records, and the studio.
 
 ## Backend API
-In order to works, you'll need to fork the Laravel backend part of O'micro, along with a SQL database.
+In order to works, it needs the Laravel backend part of O'micro, along with a SQL database. As this project was made during school, it remains private and sadly cannot be forked.
 
 ## Images
 
