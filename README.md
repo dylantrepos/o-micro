@@ -1,4 +1,4 @@
-﻿# projet-o-micro-front
+﻿# Project O'Micro 
 
 ## What is O'micro ? 
 Made during school, this application is a combination of a cloud storage service and a minimalist studio. You can
@@ -6,6 +6,9 @@ create a song where you or other band members can record their ideas. Once recor
 can listen to all the instruments together, creating a perfect prototype for a song. It also helps
 to save all your band's songs and ideas in a single place. To simplify understanding, we can
 divide the application into four parts: the band, the songs, the records, and the studio.
+
+## Backend API
+In order to works, you'll need to fork the Laravel backend part of O'micro, along with a SQL database.
 
 ## Images
 
