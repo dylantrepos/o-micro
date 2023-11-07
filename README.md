@@ -1,4 +1,4 @@
-﻿# Project O'Micro 
+﻿# Project O'micro 
 
 ## What is O'micro ? 
 Made during school, this application is a combination of a cloud storage service and a minimalist studio. You can
